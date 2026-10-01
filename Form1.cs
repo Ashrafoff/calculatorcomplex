@@ -1,118 +1,332 @@
-﻿using System;
-using System.Windows.Forms;
-
-namespace WindowsFormsApp6
+namespace calculator2
 {
     public partial class Form1 : Form
     {
-        bool click = false;
-        double resultValue = 0;
-        string operationPerformed = "";
-
+        double firstNumber = 0;
+        string operation = "";
+        bool isOperationPerformed = false;
+        bool isResultShown = false;
         public Form1()
         {
             InitializeComponent();
+            textBox1.Text = "0";
+            textBox1.ReadOnly = true;
+            textBox2.ReadOnly = true;
         }
 
-        private void AppendNumber(string number)
+        private void button1_Click(object sender, EventArgs e)
         {
-            if (click || richTextBox1.Text == "0")
+            Button btn = (Button)sender;
+
+            if (textBox1.Text == "0" || isOperationPerformed)
+            textBox1.Clear();
+
             {
-                richTextBox1.Text = "";
-                click = false;
+                textBox1.Text += "";
+                isOperationPerformed = false;
             }
-            richTextBox1.Text += number;
+            textBox1.Text += btn.Text;
         }
 
-        private void button1_Click(object sender, EventArgs e) { AppendNumber("1"); }
-        private void button2_Click(object sender, EventArgs e) { AppendNumber("2"); }
-        private void button4_Click(object sender, EventArgs e) { AppendNumber("3"); }
-        private void button3_Click(object sender, EventArgs e) { AppendNumber("4"); }
-        private void button6_Click(object sender, EventArgs e) { AppendNumber("5"); }
-        private void button5_Click(object sender, EventArgs e) { AppendNumber("6"); }
-        private void button9_Click(object sender, EventArgs e) { AppendNumber("7"); }
-        private void button8_Click(object sender, EventArgs e) { AppendNumber("8"); }
-        private void button7_Click(object sender, EventArgs e) { AppendNumber("9"); }
-        private void button10_Click(object sender, EventArgs e) { AppendNumber("0"); }
-
-        private void button12_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            if (click)
+            Button btn = (Button)sender;
+
+            if (textBox1.Text == "0" || isOperationPerformed || isResultShown)
+                textBox1.Clear();
+
             {
-                richTextBox1.Text = "0";
-                click = false;
+                textBox1.Text += "";
+                isOperationPerformed = false;
+                isResultShown = false;
             }
-            if (!richTextBox1.Text.Contains(","))
-            {
-                richTextBox1.Text += ",";
-            }
+            textBox1.Text += btn.Text;
         }
 
-        private void SetOperation(string op)
+        private void button3_Click(object sender, EventArgs e)
         {
-            if (double.TryParse(richTextBox1.Text, out double val))
+            Button btn = (Button)sender;
+
+            if (textBox1.Text == "0" || isOperationPerformed || isResultShown)
+                textBox1.Clear();
+
             {
-                resultValue = val;
-                operationPerformed = op;
-                click = true;
+                textBox1.Text += "";
+                isOperationPerformed = false;
+                isResultShown = false;
             }
+            textBox1.Text += btn.Text;
         }
 
-        private void button18_Click(object sender, EventArgs e) { SetOperation("+"); }
-        private void button20_Click(object sender, EventArgs e) { SetOperation("-"); }
-        private void button16_Click(object sender, EventArgs e) { SetOperation("*"); }
-        private void button17_Click(object sender, EventArgs e) { SetOperation(":"); }
-        private void button14_Click(object sender, EventArgs e) { SetOperation("%"); }
-
-        private void button15_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-            if (double.TryParse(richTextBox1.Text, out double val))
+            Button btn = (Button)sender;
+
+            if (textBox1.Text == "0" || isOperationPerformed || isResultShown)
+                textBox1.Clear();
+
             {
-                richTextBox1.Text = (val * val).ToString();
-                click = true;
+                textBox1.Text += "";
+                isOperationPerformed = false;
+                isResultShown = false;
             }
+            textBox1.Text += btn.Text;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            if (textBox1.Text == "0" || isOperationPerformed || isResultShown)
+                textBox1.Clear();
+
+            {
+                textBox1.Text += "";
+                isOperationPerformed = false;
+                isResultShown = false;
+            }
+            textBox1.Text += btn.Text;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            if (textBox1.Text == "0" || isOperationPerformed || isResultShown)
+                textBox1.Clear();
+
+            {
+                textBox1.Text += "";
+                isOperationPerformed = false;
+                isResultShown = false;
+            }
+            textBox1.Text += btn.Text;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            if (textBox1.Text == "0" || isOperationPerformed || isResultShown)
+                textBox1.Clear();
+
+            {
+                textBox1.Text += "";
+                isOperationPerformed = false;
+                isResultShown = false;
+            }
+            textBox1.Text += btn.Text;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            if (textBox1.Text == "0" || isOperationPerformed || isResultShown)
+                textBox1.Clear();
+
+            {
+                textBox1.Text += "";
+                isOperationPerformed = false;
+                isResultShown = false;
+            }
+            textBox1.Text += btn.Text;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            if (textBox1.Text == "0" || isOperationPerformed || isResultShown)
+                textBox1.Clear();
+
+            {
+                textBox1.Text += "";
+                isOperationPerformed = false;
+                isResultShown = false;
+            }
+            textBox1.Text += btn.Text;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            if (textBox1.Text == "0" || isOperationPerformed || isResultShown)
+                textBox1.Clear();
+
+            {
+                textBox1.Text += "";
+                isOperationPerformed = false;
+                isResultShown = false;
+            }
+            textBox1.Text += btn.Text;
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            if (richTextBox1.Text.Length > 1)
+            Button btn = (Button)sender;
+
+            if (textBox1.Text == "0" || isOperationPerformed || isResultShown)
+
             {
-                richTextBox1.Text = richTextBox1.Text.Substring(0, richTextBox1.Text.Length - 1);
+                textBox1.Text += "";
+                isOperationPerformed = false;
+                isResultShown = false;
+                return;
+            }
+            textBox1.Text += "00";
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            if (isOperationPerformed || isResultShown)
+            {
+                textBox1.Text = "0";
+                isOperationPerformed = false;
+                isResultShown = false;
+                return;
+            }
+            if (!textBox1.Text.Contains("."))
+            {
+                textBox1.Text += ".";
+            }
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            if (!string.IsNullOrEmpty(operation) && !isOperationPerformed)
+            {
+                button14.PerformClick();
+            }
+            firstNumber = double.Parse(textBox1.Text, System.Globalization.CultureInfo.InvariantCulture);
+            operation = btn.Text;
+            isOperationPerformed = true;
+            isResultShown = true;
+
+            textBox2.Text = firstNumber + " " + operation;
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            if (!string.IsNullOrEmpty(operation) && !isOperationPerformed)
+            {
+                button15.PerformClick();
+            }
+            firstNumber = double.Parse(textBox1.Text, System.Globalization.CultureInfo.InvariantCulture);
+            operation = btn.Text;
+            isOperationPerformed = true;
+            isResultShown = true; 
+
+            textBox2.Text = firstNumber + " " + operation;
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            if (!string.IsNullOrEmpty(operation) && !isOperationPerformed)
+            {
+                button16.PerformClick();
+            }
+            firstNumber = double.Parse(textBox1.Text, System.Globalization.CultureInfo.InvariantCulture);
+            operation = btn.Text;
+            isOperationPerformed = true;
+            isResultShown = true;
+
+            textBox2.Text = firstNumber + " " + operation;
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            if (!string.IsNullOrEmpty(operation) && !isOperationPerformed)
+            {
+                button17.PerformClick();
+            }
+            firstNumber = double.Parse(textBox1.Text, System.Globalization.CultureInfo.InvariantCulture);
+            operation = btn.Text;
+            isOperationPerformed = true;
+            isResultShown = true;
+
+
+            textBox2.Text = firstNumber + " " + operation;
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            double secondNumber = double.Parse(textBox1.Text, System.Globalization.CultureInfo.InvariantCulture);
+            double result = 0;
+
+            switch (operation)
+            {
+                case "+":
+                    result = firstNumber + secondNumber;
+                    break;
+                case "-":
+                    result = firstNumber - secondNumber;
+                    break;
+                case "*":
+                    result = firstNumber * secondNumber;
+                    break;
+                case "/":
+                    if (secondNumber != 0)
+                    {
+                        result = firstNumber / secondNumber;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cannot divide by zero");
+                        return;
+                    }
+                    
+                    break;
+                default:
+                    return;
+
+            }
+            textBox1.Text = result.ToString();
+            textBox2.Text = firstNumber + " " + operation + " " + secondNumber + " = " + result;
+
+            firstNumber = result;
+
+            operation = "";
+            isOperationPerformed = false;
+            isResultShown = true;
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            if (isOperationPerformed || isResultShown)
+            {
+                return;
+            }
+            if (textBox1.Text.Length > 1)
+            {
+                textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
+
             }
             else
             {
-                richTextBox1.Text = "0";
+                textBox1.Text = "0";
+
             }
+
         }
 
         private void button19_Click(object sender, EventArgs e)
         {
-            if (!double.TryParse(richTextBox1.Text, out double currentValue))
-                return;
-
-            switch (operationPerformed)
-            {
-                case "+":
-                    richTextBox1.Text = (resultValue + currentValue).ToString();
-                    break;
-                case "-":
-                    richTextBox1.Text = (resultValue - currentValue).ToString();
-                    break;
-                case "*":
-                    richTextBox1.Text = (resultValue * currentValue).ToString();
-                    break;
-                case ":":
-                    if (currentValue != 0)
-                        richTextBox1.Text = (resultValue / currentValue).ToString();
-                    else
-                        richTextBox1.Text = "0-a bölmək olmaz";
-                    break;
-                case "%":
-                    richTextBox1.Text = (resultValue * currentValue / 100).ToString();
-                    break;
-            }
-            operationPerformed = "";
-            click = true;
+            textBox1.Text = "0";
+            textBox2.Text = "";
+            firstNumber = 0;
+            operation = "";
+            isOperationPerformed = false;
+            isResultShown = false;
         }
     }
 }
